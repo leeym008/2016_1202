@@ -37,17 +37,30 @@ public class MainActivity extends AppCompatActivity {
         rb2 = (RadioButton) findViewById(R.id.radioButton2);
         chronometer = (Chronometer) findViewById(R.id.chronometer1);
 
-
         chronometer.stop();
+        btn2.setVisibility(View.INVISIBLE);
+        tv1.setVisibility(View.INVISIBLE);
+        calendar.setVisibility(View.INVISIBLE);
+        timepicker.setVisibility(View.INVISIBLE);
+        rb1.setVisibility(View.INVISIBLE);
+        rb2.setVisibility(View.INVISIBLE);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 chronometer.start();
                 chronometer.setTextColor(Color.parseColor("#FF0000"));
+                rb1.setVisibility(View.VISIBLE);
+                rb2.setVisibility(View.VISIBLE);
             }
         });
 
+        rb1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calendar.setVisibility(View.VISIBLE);
+            }
+        });
 
     }
 }

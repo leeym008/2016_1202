@@ -31,18 +31,23 @@
         android:layout_height="48dp">
 
         <RadioButton
-            android:text="날짜 설정(캘린더뷰)"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/radioButton1"
-            android:layout_weight="1" />
-
-        <RadioButton
             android:text="시간 설정"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/radioButton2"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:scaleY="0.8"
+            />
+
+        <RadioButton
+            android:text="날짜 설정(캘린더뷰)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton1"
+            android:layout_weight="1"
+            android:scaleX="0.8"
+            />
+
     </RadioGroup>
 
     <FrameLayout
@@ -51,37 +56,35 @@
         android:id="@+id/FrameLayout1">
 
         <CalendarView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/calendarView1" />
 
         <TimePicker
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/timePicker1" />
     </FrameLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="28dp"
+        android:layout_height="wrap_content"
         android:weightSum="1"
         android:id="@+id/LinearLayout2">
 
         <Button
             android:text="예약 완료"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button2"
-            android:layout_weight="0.20" />
+            android:layout_height="34dp"
+            android:id="@+id/button2" />
 
         <TextView
             android:text="예약시간확인"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
             android:id="@+id/textView1"
-            android:gravity="center"
-            android:layout_weight="0.89" />
+            android:gravity="center" />
     </LinearLayout>
 
 </LinearLayout>
