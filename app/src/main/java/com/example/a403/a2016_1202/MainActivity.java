@@ -61,6 +61,12 @@ public class MainActivity extends AppCompatActivity {
                 calendar.setVisibility(View.VISIBLE);
             }
         });
+        rb2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                timepicker.setVisibility(View.VISIBLE);
+            }
+        });
 
     }
 }
