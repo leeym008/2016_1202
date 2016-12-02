@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Chronometer;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -38,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
         chronometer = (Chronometer) findViewById(R.id.chronometer1);
 
         chronometer.stop();
-        btn2.setVisibility(View.INVISIBLE);
-        tv1.setVisibility(View.INVISIBLE);
         calendar.setVisibility(View.INVISIBLE);
         timepicker.setVisibility(View.INVISIBLE);
         rb1.setVisibility(View.INVISIBLE);
@@ -55,18 +54,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        rb1.setOnClickListener(new View.OnClickListener() {
+
+
+        rb1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                calendar.setVisibility(View.VISIBLE);
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(rb1.isChecked()){
+                    calendar.setVisibility(View.VISIBLE);
+                    timepicker.setVisibility(View.INVISIBLE);
+                    btn2.setVisibility(View.VISIBLE);
+                }
             }
         });
-        rb2.setOnClickListener(new View.OnClickListener() {
+        rb2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                timepicker.setVisibility(View.VISIBLE);
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(rb2.isChecked()){
+                    calendar.setVisibility(View.INVISIBLE);
+                    timepicker.setVisibility(View.VISIBLE);
+                    btn2.setVisibility(View.VISIBLE);
+                }
             }
         });
 
+        rb2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv1.setVisibility(View.VISIBLE);
+            }
+        });
     }
 }
